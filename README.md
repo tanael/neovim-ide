@@ -19,6 +19,8 @@ The rest of the configuration is pulled from my legacy `init.vim`.
 As `nvim` commands:
 
 ```vim
+" install plugins, after adding entry in run-control file
+:PlugInstall
 " update plugins
 :PlugUpdate
 " remove plugins, after remove entry from run-control file
