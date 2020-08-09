@@ -1,5 +1,6 @@
 # neovim-ide
 
+:monkey:
 Neovim setup as an IDE, for use on Debian.
 
 Relies on `vim-plug` and `ncm2`.
@@ -21,10 +22,13 @@ As `nvim` commands:
 ```vim
 " install plugins, after adding entry in run-control file
 :PlugInstall
+
 " update plugins
 :PlugUpdate
+
 " remove plugins, after remove entry from run-control file
 :PlugClean
+
 " update vim-plug
 :PlugUpgrade
 ```
