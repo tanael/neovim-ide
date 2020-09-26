@@ -12,7 +12,7 @@ sudo apt update
 sudo apt install -y neovim git curl exuberant-ctags python3-jedi python3-yapf \
 	python3-setproctitle vim-ctrlp vim-airline vim-airline-themes \
 	vim-common vim-ctrlp vim-fugitive vim-python-jedi vim-snippets global \
-	npm
+	npm python3-bashate shellcheck
 	
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
