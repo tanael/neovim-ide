@@ -8,9 +8,11 @@ let g:ale_fixers = {
 \   'rust': ['rustfmt'],
 \}
 let g:ale_linters = { 'rust': ['rls'], }
-let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 1
+" let g:ale_fix_on_save = 1
+" let g:ale_completion_enabled = 1
 noremap <F9> :TagbarToggle<CR>
+noremap <F2> :!cargo run<CR>
+noremap <F3> :!cargo build<CR>
 
 augroup rust
     autocmd!
