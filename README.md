@@ -1,9 +1,9 @@
 # neovim-ide
 
 :monkey:
-Neovim setup as an IDE, for use on Debian.
+Neovim setup as an IDE.
 
-Relies on `vim-plug` and `ncm2`.
+Relies on `savq/paq-nvim` and native neovim LSP.
 
 ## Install
 
