@@ -15,20 +15,20 @@ This will install `neovim` with helpful dependencies not automatically pulled.
 
 The rest of the configuration is pulled from my legacy `init.vim`.
 
-## Manage
+## Manage plugins
 
 As `nvim` commands:
 
 ```vim
-" install plugins, after adding entry in run-control file
-:PlugInstall
+" install plugins present in plugin configuration
+:PaqInstall
 
-" update plugins
-:PlugUpdate
+" update plugins already installed
+:PaqUpdate
 
-" remove plugins, after remove entry from run-control file
-:PlugClean
+" remove plugins no longer present in configuration
+:PaqClean
 
-" update vim-plug
-:PlugUpgrade
+" Execute all three operations listed above
+:PaqSync
 ```
