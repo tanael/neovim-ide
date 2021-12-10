@@ -2,19 +2,9 @@
 
 set -e
 
-cnf_dir="$HOME/.config/nvim"
-
-if [ ! -d "${cnf_dir}" ]; then
-	mkdir -p "${cnf_dir}"
-fi
+stow home
 
 sudo apt update
-sudo apt install -y neovim git curl exuberant-ctags python3-jedi python3-yapf \
-	python3-setproctitle vim-ctrlp vim-airline vim-airline-themes \
-	vim-common vim-ctrlp vim-fugitive vim-python-jedi vim-snippets global \
-	npm python3-bashate shellcheck
+sudo apt install -y neovim git curl npm shellcheck
 	
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-npm i -g bash-language-server
+sudo npm i -g bash-language-server
