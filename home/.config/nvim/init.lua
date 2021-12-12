@@ -4,5 +4,6 @@ require('initial_setup')
 require('plugins')
 -- configure plugins
 require('cmp_conf')
+require('lspconfig_conf')
 
 

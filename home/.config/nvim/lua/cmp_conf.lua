@@ -45,25 +45,3 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
-
--- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-local nvim_lsp = require('lspconfig')
-local servers = { 'bashls', 'ltex', 'sumneko_lua' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    capabilities = capabilities,
-  }
-end
-
--- lua lspconfig
-nvim_lsp['sumneko_lua'].setup {
-  cmd = { "/home/nathan/.local/share/nvim/lsp_servers/sumneko_lua/extension/server/bin/Linux/lua-language-server" },
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' }
-      }
-    }
-  }
-}
