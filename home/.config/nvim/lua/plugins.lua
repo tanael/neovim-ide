@@ -12,4 +12,18 @@ require "paq" {
 
     "hrsh7th/cmp-vsnip";
     "hrsh7th/vim-vsnip";
+
+    "svermeulen/vimpeccable";
+
+    "EdenEast/nightfox.nvim";
+
+    "nvim-lualine/lualine.nvim";
+    "kyazdani42/nvim-web-devicons";
+
+    "preservim/nerdtree";
+    "qpkorr/vim-bufkill";
+    "tpope/vim-commentary";
+    "airblade/vim-gitgutter";
+    "ibhagwan/fzf-lua"; -- move to telescope with 0.6.0
+    "tpope/vim-fugitive";
 }
