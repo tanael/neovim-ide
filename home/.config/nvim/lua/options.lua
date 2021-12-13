@@ -21,7 +21,6 @@ vim.o.tabstop = 8
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
+vim.o.termguicolors = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-
-require('nightfox').load('nightfox')
