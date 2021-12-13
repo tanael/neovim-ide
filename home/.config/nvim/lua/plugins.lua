@@ -28,7 +28,7 @@ require "paq" {
     "kyazdani42/nvim-web-devicons";
 
     -- file explorer
-    "preservim/nerdtree";
+    "kyazdani42/nvim-tree.lua";
 
     -- buffer
     "qpkorr/vim-bufkill";
@@ -46,3 +46,5 @@ require "paq" {
     -- register
     "tversteeg/registers.nvim";
 }
+
+require('nvim-tree').setup {}
