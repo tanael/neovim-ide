@@ -36,3 +36,6 @@ vimp.noremap('<leader>gs', ':Git<CR>')
 
 -- nvimtree
 vimp.nnoremap('<leader>t', ':NvimTreeToggle<CR>')
+
+-- trouble
+vimp.nnoremap('<leader>T', ':TroubleToggle<CR>')
