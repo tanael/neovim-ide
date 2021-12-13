@@ -22,6 +22,7 @@ cmp.setup({
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<tab>'] = cmp.mapping.select_next_item(),
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
