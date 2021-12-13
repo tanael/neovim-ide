@@ -46,5 +46,3 @@ require "paq" {
     -- register
     "tversteeg/registers.nvim";
 }
-
-require('nvim-tree').setup {}
