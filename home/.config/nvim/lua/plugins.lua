@@ -1,5 +1,5 @@
 require "paq" {
-    "savq/paq-nvim";
+    "savq/paq-nvim"; -- use packer instead
 
     -- treesitter
     "nvim-treesitter/nvim-treesitter";
@@ -45,4 +45,7 @@ require "paq" {
 
     -- register
     "tversteeg/registers.nvim";
+
+    -- diagnostics
+    "folke/trouble.nvim";
 }
