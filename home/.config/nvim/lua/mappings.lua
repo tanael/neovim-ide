@@ -33,3 +33,6 @@ vimp.nnoremap('<leader>x', '<C-w>q')
 
 -- fugitive
 vimp.noremap('<leader>gs', ':Git<CR>')
+
+-- nvimtree
+vimp.nnoremap('<leader>t', ':NvimTreeToggle<CR>')
