@@ -1,6 +1,4 @@
--- install plugin manager
-require('initial_setup')
--- load plugins
+-- install plugin manager & load plugins
 require('plugins')
 -- options
 require('options')

@@ -1,9 +1,9 @@
-# neovim-ide
+# Neovim as an IDE
 
 :monkey:
 Neovim setup as an IDE.
 
-Relies on `savq/paq-nvim` and native neovim LSP.
+Relies on `wbthomason/packer.nvim` and native neovim LSP.
 
 ## Install
 
