@@ -11,7 +11,7 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap('', '<F6>', ':ls<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('', '<F7>', ':bprevious<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('', '<F8>', ':bnext<CR>', { noremap = true, silent = true })
-vimp.nnoremap('<leader>q', ':BW<CR>')
+vimp.nnoremap('<leader>bw', ':BW<CR>')
 
 -- general
 vimp.nnoremap('<leader>w', ':w<CR>')
@@ -28,8 +28,13 @@ vimp.inoremap('jk', '<esc>')
 -- windows
 vimp.nnoremap('<leader><leader>', '<C-w>w')
 vimp.nnoremap('<leader>v', '<C-w>v')
-vimp.nnoremap('<leader>h', '<C-w>s')
-vimp.nnoremap('<leader>x', '<C-w>q')
+vimp.nnoremap('<leader>s', '<C-w>s')
+vimp.nnoremap('<leader>q', '<C-w>q')
+-- window cursor movement
+vimp.nnoremap('<A-h>', '<C-w>h')
+vimp.nnoremap('<A-j>', '<C-w>j')
+vimp.nnoremap('<A-k>', '<C-w>k')
+vimp.nnoremap('<A-l>', '<C-w>l')
 
 -- fugitive
 vimp.noremap('<leader>gs', ':Git<CR>')
@@ -39,3 +44,4 @@ vimp.nnoremap('<leader>t', ':NvimTreeToggle<CR>')
 
 -- trouble
 vimp.nnoremap('<leader>T', ':TroubleToggle<CR>')
+
