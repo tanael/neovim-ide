@@ -73,6 +73,9 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- markdown
+  use { "ellisonleao/glow.nvim" }
+
   -- Keep this at the end
   -- Automatically set up my configuration after cloning packer.nvim
   if Packer_bootstrap then
