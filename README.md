@@ -20,15 +20,19 @@ The rest of the configuration is pulled from my legacy `init.vim`.
 As `nvim` commands:
 
 ```vim
-" install plugins present in plugin configuration
-:PaqInstall
+-- You must run this or `PackerSync` whenever you make changes to your plugin configuration
+-- Regenerate compiled loader file
+:PackerCompile
 
-" update plugins already installed
-:PaqUpdate
+-- Remove any disabled or unused plugins
+:PackerClean
 
-" remove plugins no longer present in configuration
-:PaqClean
+-- Clean, then install missing plugins
+:PackerInstall
 
-" Execute all three operations listed above
-:PaqSync
+-- Clean, then update and install plugins
+:PackerUpdate
+
+-- Perform `PackerUpdate` and then `PackerCompile`
+:PackerSync
 ```
