@@ -49,17 +49,23 @@ return require('packer').startup(function(use)
   }
 
   -- file explorer
-  use "kyazdani42/nvim-tree.lua";
+  use "kyazdani42/nvim-tree.lua"
 
   -- buffers
-  use "qpkorr/vim-bufkill";
+  use "qpkorr/vim-bufkill"
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
   -- edition
-  use "tpope/vim-commentary";
+  use "tpope/vim-commentary"
+  use {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup {}
+    end
+  }
 
   -- fuzzy search
-  use "ibhagwan/fzf-lua"; -- move to telescope with 0.6.0
+  use "ibhagwan/fzf-lua" -- move to telescope with 0.6.0
 
   -- git
   use "airblade/vim-gitgutter"
