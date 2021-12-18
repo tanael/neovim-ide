@@ -10,5 +10,6 @@ require('bufferline_conf')
 require('lualine_conf')
 require('treesitter_conf')
 require('nvim-tree_conf')
+require('project_conf')
 -- mappings
 require('mappings')
