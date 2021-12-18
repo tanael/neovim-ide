@@ -51,8 +51,9 @@ return require('packer').startup(function(use)
   -- file explorer
   use "kyazdani42/nvim-tree.lua";
 
-  -- buffer
+  -- buffers
   use "qpkorr/vim-bufkill";
+  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
   -- edition
   use "tpope/vim-commentary";
