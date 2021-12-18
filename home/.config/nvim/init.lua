@@ -12,5 +12,6 @@ require('treesitter_conf')
 require('nvim-tree_conf')
 require('project_conf')
 require('autocmds')
+require('whichkey_conf')
 -- mappings
 require('mappings')

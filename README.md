@@ -121,3 +121,4 @@ require('lspconfig')['ltex'].setup {
     * `nightfox.nvim`
   * Configuration Helper
     * `vimpeccable`
+    * `nvim-whichkey-setup.lua`

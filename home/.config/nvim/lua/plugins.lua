@@ -101,6 +101,11 @@ return require('packer').startup(function(use)
     end
   }
 
+  use {
+    'AckslD/nvim-whichkey-setup.lua',
+    requires = {'liuchengxu/vim-which-key'},
+  }
+
   -- Keep this at the end
   -- Automatically set up my configuration after cloning packer.nvim
   if Packer_bootstrap then
