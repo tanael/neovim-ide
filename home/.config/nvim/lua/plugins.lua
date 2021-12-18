@@ -87,6 +87,14 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- dashboard
+  use {
+    'goolord/alpha-nvim',
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.opts)
+    end
+  }
+
   -- Keep this at the end
   -- Automatically set up my configuration after cloning packer.nvim
   if Packer_bootstrap then
