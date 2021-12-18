@@ -107,6 +107,7 @@ require('lspconfig')['ltex'].setup {
     * `fzf-lua`
   * Edition
     * `vim-commentary`
+    * `nvim-autopairs`
   * Buffers
     * `vim-bufkill`
     * `bufferline.nvim`
