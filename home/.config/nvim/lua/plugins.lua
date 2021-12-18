@@ -38,8 +38,10 @@ return require('packer').startup(function(use)
   -- easy config
   use "svermeulen/vimpeccable"
 
-  -- colorscheme
+  -- colorschemes
   use "EdenEast/nightfox.nvim"
+  -- use 'navarasu/onedark.nvim'
+  -- use 'marko-cerovac/material.nvim'
 
   -- line & fonts
   use { "nvim-lualine/lualine.nvim",
