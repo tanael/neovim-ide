@@ -5,9 +5,10 @@ My :monkey: `neovim` setup as an IDE.
 # Table of Contents
 
   1. [Install](#install)
-  2. [Manage Plugins](#manage-plugins)
-  3. [Manage LSP Servers](#manage-lsp-servers)
-  4. [Used Plugins](#used-plugins)
+  2. [Screenshots](#screenshots)
+  3. [Manage Plugins](#manage-plugins)
+  4. [Manage LSP Servers](#manage-lsp-servers)
+  5. [Used Plugins](#used-plugins)
 
 ## Install
 
@@ -19,6 +20,9 @@ This will install `neovim` with helpful dependencies not automatically pulled.
 
 `init.lua` contains import path to different specialised configuration files.
 
+## Screenshots
+
+![overview](screenshots/overview.png)
 
 ## Manage Plugins
 
