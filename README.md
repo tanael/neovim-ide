@@ -1,11 +1,13 @@
 # `neovim` as an IDE
 
-:monkey:
-`neovim` setup as an IDE.
+My :monkey: `neovim` setup as an IDE.
 
-Relies on:
-  * `wbthomason/packer.nvim` to manage plugins
-  * `williamboman/nvim-lsp-installer` to manage LSP servers
+# Table of Contents
+
+  1. [Install](#install)
+  2. [Manage Plugins](#manage-plugins)
+  3. [Manage LSP Servers](#manage-lsp-servers)
+  4. [Used Plugins](#used-plugins)
 
 ## Install
 
@@ -18,7 +20,9 @@ This will install `neovim` with helpful dependencies not automatically pulled.
 `init.lua` contains import path to different specialised configuration files.
 
 
-## Manage plugins with `packer.vim`
+## Manage Plugins
+
+This configuration uses `wbthomason/packer.nvim` to manage plugins.
 
 As `nvim` commands:
 
@@ -40,7 +44,9 @@ As `nvim` commands:
 :PackerSync
 ```
 
-## Manage LSP servers with `nvim-lsp-installer`
+## Manage LSP Servers
+
+This configuration uses `williamboman/nvim-lsp-installer` to manage LSP servers.
 
 As `nvim` commands:
 
@@ -60,3 +66,49 @@ require('lspconfig')['ltex'].setup {
   cmd = {  nvim_data_path .. "ltex/ltex-ls-15.2.0/bin/ltex-ls" }
 }
 ```
+
+## Used Plugins
+
+  * Plugin Management
+    * `packer.nvim`
+  * LSP
+    * `nvim-lspconfig`
+    * `nvim-lsp-installer`
+  * Completion
+    * `nvim-cmp`
+    * `vim-vsnip`
+    * `cmp-cmdline`
+    * `cmp-path`
+    * `cmp-buffer`
+    * `cmp-nvim-lsp`
+    * `nvim-lspconfig`
+  * Dashboard
+    * `alpha-nvim`
+  * Project Management
+    * `project.nvim`
+  * Rendering
+    * `glow.nvim` for `markdown`
+  * Diagnostics
+    * `trouble.nvim`
+  * Register
+    * `registers.nvim`
+  * Git
+    * `fugitive`
+    * `vim-gitgutter`
+  * Fuzzy search
+    * `fzf-lua`
+  * Edition
+    * `vim-commentary`
+  * Buffers
+    * `vim-bufkill`
+    * `bufferline.nvim`
+  * File Explorer
+    * `nvim-tree.lua`
+  * Fonts
+    * `nvim-web-devicons`
+  * Status Line
+    * `lualine.nvim`
+  * Color Scheme
+    * `nightfox.nvim`
+  * Configuration Helper
+    * `vimpeccable`
