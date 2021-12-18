@@ -23,6 +23,10 @@ This will install `neovim` with helpful dependencies not automatically pulled.
 ## Screenshots
 
 ![overview](screenshots/overview.png)
+![diagnostics](screenshots/diagnostics.png)
+![markdown rendering](screenshots/markdown-rendering.png)
+![fuzzy search](screenshots/fuzzy-search.png)
+![auto-completion](screenshots/auto-completion.png)
 
 ## Manage Plugins
 
