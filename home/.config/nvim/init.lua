@@ -11,5 +11,6 @@ require('lualine_conf')
 require('treesitter_conf')
 require('nvim-tree_conf')
 require('project_conf')
+require('autocmds')
 -- mappings
 require('mappings')
