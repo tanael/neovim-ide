@@ -109,6 +109,7 @@ require('lspconfig')['ltex'].setup {
   * Edition
     * `gennaro-tedesco/nvim-commaround`
     * `nvim-autopairs`
+    * `indent-blankline.nvim`
   * Buffers
     * `vim-bufkill`
     * `bufferline.nvim`

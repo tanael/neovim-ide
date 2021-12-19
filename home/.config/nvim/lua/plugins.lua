@@ -63,6 +63,7 @@ return require('packer').startup(function(use)
       require("nvim-autopairs").setup {}
     end
   }
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- fuzzy search
   use "ibhagwan/fzf-lua" -- move to telescope with 0.6.0
