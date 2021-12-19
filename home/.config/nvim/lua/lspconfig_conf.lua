@@ -11,7 +11,7 @@ end
 local nvim_data_path = os.getenv("HOME") .. "/.local/share/nvim/lsp_servers/"
 -- lua lspconfig
 nvim_lsp['sumneko_lua'].setup {
-  cmd = {  nvim_data_path .. "sumneko_lua/extension/server/bin/Linux/lua-language-server" },
+  cmd = {  nvim_data_path .. "sumneko_lua/extension/server/bin/lua-language-server" },
   settings = {
     Lua = {
       diagnostics = {
