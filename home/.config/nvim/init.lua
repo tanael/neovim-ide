@@ -13,5 +13,6 @@ require('nvim-tree_conf')
 require('project_conf')
 require('autocmds')
 require('whichkey_conf')
+require('indent-blankline_conf')
 -- mappings
 require('mappings')
