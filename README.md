@@ -20,6 +20,20 @@ This will install `neovim` with helpful dependencies not automatically pulled.
 
 `init.lua` contains import path to different specialised configuration files.
 
+### First run
+
+`packer.nvim` should automatically try to install the required packages.
+
+To install LSP servers and Treesitter language parsers:
+```vim
+:LspInstall sumneko_lua
+:LspInstall bashls
+:LspInstall ltex
+:TSInstall lua
+:TSInstall bash
+:TSInstall markdown
+```
+
 ## Screenshots
 
 ![overview](screenshots/overview.png)
