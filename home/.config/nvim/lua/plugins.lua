@@ -56,7 +56,12 @@ return require('packer').startup(function(use)
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
   -- edition
-  use "gennaro-tedesco/nvim-commaround"
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
   use {
     "windwp/nvim-autopairs",
     config = function()
