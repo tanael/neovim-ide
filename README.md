@@ -107,7 +107,7 @@ require('lspconfig')['ltex'].setup {
   * Fuzzy search
     * `fzf-lua`
   * Edition
-    * `gennaro-tedesco/nvim-commaround`
+    * `numToStr/Comment.nvim`
     * `nvim-autopairs`
     * `indent-blankline.nvim`
   * Buffers
