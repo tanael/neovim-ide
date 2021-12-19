@@ -56,7 +56,7 @@ return require('packer').startup(function(use)
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
   -- edition
-  use "tpope/vim-commentary"
+  use "gennaro-tedesco/nvim-commaround"
   use {
     "windwp/nvim-autopairs",
     config = function()
