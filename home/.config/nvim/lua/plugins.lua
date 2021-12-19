@@ -92,6 +92,14 @@ return require('packer').startup(function(use)
       require("project_nvim").setup {}
     end
   }
+  -- todo finder
+  use {
+  "folke/todo-comments.nvim",
+  requires = "nvim-lua/plenary.nvim",
+  config = function()
+    require("todo-comments").setup {}
+  end
+  }
 
   -- dashboard
   use {
@@ -101,6 +109,7 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- key mapping
   use {
     'AckslD/nvim-whichkey-setup.lua',
     requires = {'liuchengxu/vim-which-key'},

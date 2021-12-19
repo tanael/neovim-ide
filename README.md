@@ -94,6 +94,7 @@ require('lspconfig')['ltex'].setup {
     * `alpha-nvim`
   * Project Management
     * `project.nvim`
+    * `todo-comments`
   * Rendering
     * `glow.nvim` for `markdown`
   * Diagnostics
