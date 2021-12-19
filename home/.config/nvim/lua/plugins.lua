@@ -65,9 +65,6 @@ return require('packer').startup(function(use)
   }
   use "lukas-reineke/indent-blankline.nvim"
 
-  -- fuzzy search
-  use "ibhagwan/fzf-lua" -- move to telescope with 0.6.0
-
   -- git
   use "airblade/vim-gitgutter"
   use "tpope/vim-fugitive"
@@ -101,6 +98,10 @@ return require('packer').startup(function(use)
     require("todo-comments").setup {}
   end
   }
+  -- fuzzy search
+  use "ibhagwan/fzf-lua" -- TODO: move to telescope with 0.6.0
+  -- TODO: try "jose-elias-alvarez/null-ls.nvim" with 0.6.0
+
 
   -- dashboard
   use {
