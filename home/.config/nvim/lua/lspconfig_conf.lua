@@ -25,3 +25,9 @@ nvim_lsp['sumneko_lua'].setup {
 nvim_lsp['ltex'].setup {
   cmd = {  nvim_data_path .. "ltex/ltex-ls-15.2.0/bin/ltex-ls" }
 }
+
+
+-- python
+nvim_lsp['pylsp'].setup {
+  cmd = { 'pylsp' } -- install python3-pylsp-mypy
+}
