@@ -23,7 +23,7 @@ nvim_lsp['sumneko_lua'].setup {
 
 -- latex & markdown lspconfig
 nvim_lsp['ltex'].setup {
-  cmd = {  nvim_data_path .. "ltex/ltex-ls-15.2.0/bin/ltex-ls" }
+  cmd = {  nvim_data_path .. "ltex/ltex-ls/bin/ltex-ls" }
 }
 
 
