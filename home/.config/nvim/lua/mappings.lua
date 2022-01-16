@@ -45,6 +45,8 @@ vimp.nnoremap('<A-h>', '<C-w>h')
 vimp.nnoremap('<A-j>', '<C-w>j')
 vimp.nnoremap('<A-k>', '<C-w>k')
 vimp.nnoremap('<A-l>', '<C-w>l')
+-- terminal mappings
+vimp.tnoremap('<A-n>', '<C-\\><C-n>')
 
 -- fugitive
 vimp.noremap('<leader>gs', ':Git<CR>')
