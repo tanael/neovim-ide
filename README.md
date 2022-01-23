@@ -18,7 +18,7 @@ This will install `neovim` with helpful dependencies not automatically pulled.
 ./install.sh
 ```
 
-`init.lua` contains import path to different specialised configuration files.
+`init.lua` contains import path to different specialized configuration files.
 
 ### First run
 
