@@ -22,7 +22,13 @@ This will install `neovim` with helpful dependencies not automatically pulled.
 
 ### First run
 
-`packer.nvim` should automatically try to install the required packages.
+If `packer.nvim` does not automatically install the required packages, run:
+
+```vim
+:PackerInstall
+```
+
+Then restart `nvim`.
 
 To install LSP servers and Treesitter language parsers:
 ```vim
