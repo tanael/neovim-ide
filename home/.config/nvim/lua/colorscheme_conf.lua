@@ -1,5 +1,5 @@
 -- nightfox
-require('nightfox').load('nightfox')
+vim.cmd("colorscheme nightfox")
 
 -- onedark
 -- vim.g.onedark_style = 'deep'
