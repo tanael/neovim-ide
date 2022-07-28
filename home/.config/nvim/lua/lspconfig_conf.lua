@@ -44,3 +44,23 @@ nvim_lsp['pylsp'].setup {
   cmd = { 'pylsp' }, -- install python3-pylsp-mypy
   capabilities = capabilities,
 }
+
+-- haskell
+local util = require 'lspconfig.util'
+nvim_lsp['hls'].setup{
+  cmd = { nvim_data_path .. "haskell/bin/haskell-language-server-wrapper", "--lsp" }, -- install python3-pylsp-mypy
+  capabilities = capabilities,
+  filetypes = { "haskell", "lhaskell" },
+  root_dir = function (filepath)
+      return (
+        util.root_pattern('hie.yaml', 'stack.yaml', 'cabal.project')(filepath)
+        or util.root_pattern('*.cabal', 'package.yaml')(filepath)
+      )
+    end,
+  settings = {
+    haskell = {
+      formattingProvider = "ormolu"
+    }
+  },
+  single_file_support = true
+}
