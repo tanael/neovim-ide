@@ -48,7 +48,7 @@ nvim_lsp['pylsp'].setup {
 -- haskell
 local util = require 'lspconfig.util'
 nvim_lsp['hls'].setup{
-  cmd = { nvim_data_path .. "haskell/bin/haskell-language-server-wrapper", "--lsp" }, -- install python3-pylsp-mypy
+  cmd = { "haskell-language-server-wrapper", "--lsp" },
   capabilities = capabilities,
   filetypes = { "haskell", "lhaskell" },
   root_dir = function (filepath)
