@@ -17,5 +17,9 @@ vim.cmd([[
       autocmd FileType css setlocal tabstop=8 expandtab shiftwidth=2 softtabstop=2
       autocmd FileType scss setlocal tabstop=8 expandtab shiftwidth=2 softtabstop=2
   augroup end
+  augroup system
+      autocmd!
+      autocmd FileType rust setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
+      autocmd FileType rust noremap <F2> :!cargo check<CR>
   augroup end
 ]])
