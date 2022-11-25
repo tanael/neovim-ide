@@ -1,7 +1,7 @@
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local nvim_lsp = require('lspconfig')
-local servers = { 'bashls', 'ltex', 'sumneko_lua', 'pylsp', 'rust_analyzer', 'html' }
+local servers = { 'bashls', 'ltex', 'sumneko_lua', 'pylsp', 'rust_analyzer' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     capabilities = capabilities,
@@ -46,7 +46,12 @@ nvim_lsp['pylsp'].setup {
 }
 
 -- html
-nvim_lsp['html'].setup{}
+local html_capabilities = vim.lsp.protocol.make_client_capabilities()
+html_capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+nvim_lsp['html'].setup{
+  capabilities = html_capabilities,
+}
 
 -- haskell
 local util = require 'lspconfig.util'
