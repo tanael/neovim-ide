@@ -1,7 +1,7 @@
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local nvim_lsp = require('lspconfig')
-local servers = { 'bashls', 'ltex', 'sumneko_lua', 'pylsp', 'rust_analyzer' }
+local servers = { 'bashls', 'ltex', 'sumneko_lua', 'pylsp', 'rust_analyzer', 'html' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     capabilities = capabilities,
@@ -44,6 +44,9 @@ nvim_lsp['pylsp'].setup {
   cmd = { 'pylsp' }, -- install python3-pylsp-mypy
   capabilities = capabilities,
 }
+
+-- html
+nvim_lsp['html'].setup{}
 
 -- haskell
 local util = require 'lspconfig.util'
