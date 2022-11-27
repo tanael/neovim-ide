@@ -24,5 +24,6 @@ vim.cmd([[
       autocmd FileType rust noremap <F3> :!cargo build<CR>
       autocmd FileType rust noremap <F4> :!cargo run<CR>
       autocmd FileType rust noremap <F5> :!cargo test<CR>
+      autocmd FileType rust noremap <F6> :!cargo doc --open<CR>
   augroup end
 ]])
