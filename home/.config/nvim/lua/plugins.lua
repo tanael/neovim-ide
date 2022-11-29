@@ -111,6 +111,10 @@ return require('packer').startup(function(use)
     end
   }
   -- fuzzy search
+  use { 'ibhagwan/fzf-lua',
+    -- optional for icon support
+    requires = { 'nvim-tree/nvim-web-devicons' }
+  }
   use "nvim-telescope/telescope.nvim"
   use "jose-elias-alvarez/null-ls.nvim" -- TODO: configure
 
