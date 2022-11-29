@@ -124,8 +124,10 @@ return require('packer').startup(function(use)
 
   -- key mapping
   use {
-    'AckslD/nvim-whichkey-setup.lua',
-    requires = {'liuchengxu/vim-which-key'},
+    "folke/which-key.nvim",
+    config = function()
+      require("which-key").setup()
+    end
   }
 
   -- Keep this at the end
