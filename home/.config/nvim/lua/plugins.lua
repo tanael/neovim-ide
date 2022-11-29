@@ -88,6 +88,9 @@ return require('packer').startup(function(use)
   -- markdown
   use { "ellisonleao/glow.nvim" }
 
+  -- rust
+  use { "rust-lang/rust.vim" }
+
   -- project management
   use {
     "ahmedkhalf/project.nvim",
