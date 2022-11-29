@@ -101,6 +101,7 @@ return require('packer').startup(function(use)
   -- todo finder
   use {
   "folke/todo-comments.nvim",
+  branch = 'neovim-pre-0.8.0',
   requires = "nvim-lua/plenary.nvim",
   config = function()
     require("todo-comments").setup {}
