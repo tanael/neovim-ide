@@ -93,6 +93,7 @@ return require('packer').startup(function(use)
 
   -- rust
   use { "rust-lang/rust.vim" }
+  use { "simrat39/rust-tools.nvim" }
 
   -- project management
   use {
