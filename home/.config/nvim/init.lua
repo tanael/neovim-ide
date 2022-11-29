@@ -14,5 +14,6 @@ require('project_conf')
 require('autocmds')
 require('whichkey_conf')
 require('indent-blankline_conf')
+require('null-ls_conf')
 -- mappings
 require('mappings')
