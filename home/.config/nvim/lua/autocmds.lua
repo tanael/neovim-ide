@@ -20,10 +20,13 @@ vim.cmd([[
   augroup system
       autocmd!
       autocmd FileType rust setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
-      autocmd FileType rust noremap <F2> :!cargo check<CR>
-      autocmd FileType rust noremap <F3> :!cargo build<CR>
-      autocmd FileType rust noremap <F4> :!cargo run<CR>
-      autocmd FileType rust noremap <F5> :!cargo test<CR>
-      autocmd FileType rust noremap <F6> :!cargo doc --open<CR>
+      autocmd FileType rust nnoremap <F2> :!cargo check<CR>
+      autocmd FileType rust nnoremap <F3> :!cargo build<CR>
+      autocmd FileType rust nnoremap <F4> :!cargo run<CR>
+      autocmd FileType rust nnoremap <F5> :!cargo test<CR>
+      autocmd FileType rust nnoremap <S-F1> :!cargo doc --open<CR>
+      autocmd FileType rust nnoremap <S-F2> :RustFmt<CR>
+      autocmd FileType rust nnoremap <S-F3> :!cargo fix<CR>
+      autocmd FileType rust nnoremap <S-F4> :!cargo clippy<CR>
   augroup end
 ]])
