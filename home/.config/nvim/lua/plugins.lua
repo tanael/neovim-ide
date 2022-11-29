@@ -12,7 +12,10 @@ vim.cmd([[
 ]])
 
 return require('packer').startup(function(use)
-  -- My plugins here
+  -- REQUIRED
+  use "nvim-lua/plenary.nvim"
+
+  -- treesitter
   use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
@@ -101,15 +104,14 @@ return require('packer').startup(function(use)
   -- todo finder
   use {
   "folke/todo-comments.nvim",
-  branch = 'neovim-pre-0.8.0',
-  requires = "nvim-lua/plenary.nvim",
-  config = function()
-    require("todo-comments").setup {}
-  end
+    branch = 'neovim-pre-0.8.0',
+    config = function()
+      require("todo-comments").setup {}
+    end
   }
   -- fuzzy search
-  use "ibhagwan/fzf-lua" -- TODO: move to telescope with 0.6.0
-  -- TODO: try "jose-elias-alvarez/null-ls.nvim" with 0.6.0
+  use "nvim-telescope/telescope.nvim"
+  use "jose-elias-alvarez/null-ls.nvim" -- TODO: configure
 
 
   -- dashboard
