@@ -16,24 +16,74 @@ local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
+  -- diagnostic
+  vim.opt.updatetime = 100
+  local diag_float_grp = vim.api.nvim_create_augroup("DiagnosticFloat", { clear = true })
+  vim.api.nvim_create_autocmd("CursorHold", {
+    callback = function()
+      vim.diagnostic.open_float(nil, { focusable = false })
+    end,
+    group = diag_float_grp,
+})
+
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', '<c-]>', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', 'gD', vim.lsp.buf.implementation, bufopts)
   vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
   vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
   vim.keymap.set('n', '<space>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, bufopts)
-  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', '1gD', vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+end
+
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local rust_on_attach = function(client, bufnr)
+  -- Enable completion triggered by <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- diagnostic
+  vim.opt.updatetime = 100
+  local diag_float_grp = vim.api.nvim_create_augroup("DiagnosticFloat", { clear = true })
+  vim.api.nvim_create_autocmd("CursorHold", {
+    callback = function()
+      vim.diagnostic.open_float(nil, { focusable = false })
+    end,
+    group = diag_float_grp,
+})
+
+  -- Mappings.
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', 'gd', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', '<c-]>', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', 'gD', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+  vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+  vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+  vim.keymap.set('n', '<space>wl', function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  end, bufopts)
+  vim.keymap.set('n', '1gD', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+
+  local rt = require("rust-tools")
+  vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
+  vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
 end
 
 local nvim_data_path = os.getenv("HOME") .. "/.local/share/nvim/lsp_servers/"
@@ -122,7 +172,7 @@ local opts = {
     },
   },
   server = {
-    on_attach = on_attach,
+    on_attach = rust_on_attach,
     capabilities = capabilities,
     settings = {
       ["rust-analyzer"] = {
@@ -131,6 +181,14 @@ local opts = {
           command = "clippy",
         },
       },
+    },
+  },
+  -- debugging stuff
+  dap = {
+    adapter = {
+      type = "executable",
+      command = "lldb-vscode-14",
+      name = "rt_lldb",
     },
   },
 }
