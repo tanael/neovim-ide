@@ -95,6 +95,9 @@ return require('packer').startup(function(use)
   use { "rust-lang/rust.vim" }
   use { "simrat39/rust-tools.nvim" }
 
+  -- debug
+  use 'mfussenegger/nvim-dap'
+
   -- project management
   use {
     "ahmedkhalf/project.nvim",
