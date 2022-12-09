@@ -156,6 +156,9 @@ nvim_lsp['hls'].setup{
   single_file_support = true
 }
 
+-- bash
+nvim_lsp['bashls'].setup{}
+
 -- rust
 vim.o.completeopt = "menuone,noinsert,noselect"
 vim.opt.shortmess = vim.opt.shortmess + "c"
