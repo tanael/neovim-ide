@@ -42,8 +42,6 @@ return require('packer').startup(function(use)
   use "svermeulen/vimpeccable"
 
   -- colorschemes
-  -- use "EdenEast/nightfox.nvim"
-  -- use 'navarasu/onedark.nvim'
   use 'marko-cerovac/material.nvim'
 
   -- line & fonts
