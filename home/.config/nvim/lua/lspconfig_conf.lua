@@ -12,7 +12,7 @@ vim.keymap.set('n', '<space>Q', vim.diagnostic.setloclist, opts)
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -24,7 +24,7 @@ local on_attach = function(client, bufnr)
       vim.diagnostic.open_float(nil, { focusable = false })
     end,
     group = diag_float_grp,
-})
+  })
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -48,7 +48,7 @@ end
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local rust_on_attach = function(client, bufnr)
+local rust_on_attach = function(_, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -60,7 +60,7 @@ local rust_on_attach = function(client, bufnr)
       vim.diagnostic.open_float(nil, { focusable = false })
     end,
     group = diag_float_grp,
-})
+  })
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -86,24 +86,31 @@ local rust_on_attach = function(client, bufnr)
   vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
 end
 
-local nvim_data_path = os.getenv("HOME") .. "/.local/share/nvim/lsp_servers/"
--- lua lspconfig
-nvim_lsp['sumneko_lua'].setup {
-  cmd = {  nvim_data_path .. "sumneko_lua/extension/server/bin/lua-language-server" },
-  capabilities = capabilities,
-  on_attach = on_attach,
+require'lspconfig'.lua_ls.setup {
   settings = {
     Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
       diagnostics = {
-        globals = { 'vim' }
-      }
-    }
-  }
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
 }
 
 -- latex & markdown lspconfig
 nvim_lsp['ltex'].setup {
-  cmd = {  nvim_data_path .. "ltex/ltex-ls/bin/ltex-ls" },
   capabilities = capabilities,
   on_attach = on_attach,
   settings = {
